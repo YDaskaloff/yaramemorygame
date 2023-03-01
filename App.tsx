@@ -1,10 +1,12 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView} from 'react-native';
+
+import GameScreen from '@screens/GameScreen/GameScreen';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Text>{'Good luck!'}</Text>
+      <GameScreen />
     </SafeAreaView>
   );
 };
