@@ -1,5 +1,6 @@
-import {UseGameScreenReturnType} from '@models/screens/gameScreenTypes';
 import {FC} from 'react';
+
+import {UseGameScreenReturnType} from '@models/screens/gameScreenTypes';
 
 type PlayScreenProps = Pick<
   UseGameScreenReturnType,

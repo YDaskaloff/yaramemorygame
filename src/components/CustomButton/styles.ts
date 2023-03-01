@@ -1,5 +1,6 @@
-import {normalize} from '@utils/styleUtils';
 import {StyleSheet} from 'react-native';
+
+import {normalize} from '@utils/styleUtils';
 
 export default StyleSheet.create({
   button: {

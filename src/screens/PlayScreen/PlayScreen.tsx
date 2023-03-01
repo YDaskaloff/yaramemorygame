@@ -1,7 +1,7 @@
-import commonStyles from '@styles/commonStyles';
 import React from 'react';
 import {Text, View} from 'react-native';
 
+import commonStyles from '@styles/commonStyles';
 import GameInfo from '@components/GameInfo/GameInfo';
 import ResetButton from '@components/ResetButton/ResetButton';
 import {Difficulties} from '@utils/constants/difficulties';
