@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 import StartScreen from '@screens/StartScreen/StartScreen';
 import commonStyles from '@styles/commonStyles';
 import DifficultyScreen from '@screens/DifficultyScreen/DifficultyScreen';
 import {GameScreenType} from '@models/screens/gameScreenTypes';
 import PlayScreen from '@screens/PlayScreen/PlayScreen';
+import TextCustom from '@components/TextCustom/TextCustom';
 
 import styles from './styles';
 import useGameScreen from './useGameScreen';
@@ -17,7 +18,7 @@ const GameScreen: GameScreenType = () => {
   return (
     <>
       <View style={commonStyles.screenTitleContainer}>
-        <Text style={styles.screenTitle}>Yara Memory Game</Text>
+        <TextCustom style={styles.screenTitle}>Yara Memory Game</TextCustom>
       </View>
       {!isStarted && <StartScreen startGame={startGame} />}
       {isStarted && !difficulty && (
