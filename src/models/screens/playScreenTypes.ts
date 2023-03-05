@@ -14,7 +14,7 @@ export type PlayScreenType = FC<PlayScreenProps>;
 
 type UsePlayScreenProps = Pick<PlayScreenProps, 'difficulty'>;
 
-type UsePlayScreenReturnType = {
+export type UsePlayScreenReturnType = {
   isVictory: boolean;
   score: number;
   matrix: GameCard[][];
