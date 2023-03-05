@@ -11,4 +11,7 @@ export default StyleSheet.create({
     position: 'absolute',
     top: normalize(20),
   },
+  row: {
+    flexDirection: 'row',
+  },
 });
