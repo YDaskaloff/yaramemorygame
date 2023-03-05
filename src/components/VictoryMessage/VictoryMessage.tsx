@@ -1,7 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 import ResetButton from '@components/ResetButton/ResetButton';
+import TextCustom from '@components/TextCustom/TextCustom';
 
 import styles from './styles';
 import {VictoryMessageType} from './types';
@@ -9,14 +10,14 @@ import {VictoryMessageType} from './types';
 const VictoryMessage: VictoryMessageType = ({score, resetGame}) => {
   return (
     <View style={styles.victoryContainer}>
-      <Text style={styles.victoryText}>Victory!!!</Text>
+      <TextCustom style={styles.victoryText}>Victory!!!</TextCustom>
       <View style={styles.scoreContainer}>
-        <Text style={styles.finalScoreTitle}>You scored:</Text>
-        <Text style={styles.victoryText}>{score} Points</Text>
+        <TextCustom style={styles.finalScoreTitle}>You scored:</TextCustom>
+        <TextCustom style={styles.victoryText}>{score} Points</TextCustom>
       </View>
       <View style={styles.scoreContainer}>
         <ResetButton onPress={resetGame} />
-        <Text style={styles.newGameText}>New Game</Text>
+        <TextCustom style={styles.newGameText}>New Game</TextCustom>
       </View>
     </View>
   );

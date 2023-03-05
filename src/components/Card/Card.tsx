@@ -1,5 +1,7 @@
 import React from 'react';
-import {Animated, Image, Pressable, Text} from 'react-native';
+import {Animated, Image, Pressable} from 'react-native';
+
+import TextCustom from '@components/TextCustom/TextCustom';
 
 import {CardType} from './types';
 import styles from './styles';
@@ -34,7 +36,7 @@ const Card: CardType = ({
           styles.cardFront,
           flipToFrontStyle,
         ]}>
-        <Text style={styles.placeholder}>?</Text>
+        <TextCustom style={styles.placeholder}>?</TextCustom>
       </Animated.View>
       <Animated.View style={[styles.card, styles.cardBack, flipToBackStyle]}>
         <Image
