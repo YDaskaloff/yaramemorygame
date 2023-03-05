@@ -28,9 +28,9 @@ const PlayScreen: PlayScreenType = ({resetGame, difficulty}) => {
             <GameInfo value={score.toString()} title="Score" />
           </View>
           <View style={styles.row}>
-            {matrix.map(column => {
+            {matrix.map((column, index) => {
               return (
-                <View>
+                <View key={index.toString()}>
                   {(column as GameCard[]).map(card => {
                     return (
                       <Card

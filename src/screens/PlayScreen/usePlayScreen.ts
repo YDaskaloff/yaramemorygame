@@ -44,7 +44,7 @@ export const usePlayScreen: UsePlayScreenType = ({difficulty}) => {
           Object.keys(flippedState).length + 2 ===
           difficultyCards[difficulty] * 2
         ) {
-          victoryTimeout.current = setTimeout(() => setIsVictory(true), 2000);
+          victoryTimeout.current = setTimeout(() => setIsVictory(true), 1000);
         }
         setFlipPair([]);
         addToScore();
