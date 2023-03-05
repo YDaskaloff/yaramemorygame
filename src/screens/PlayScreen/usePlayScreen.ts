@@ -3,8 +3,7 @@ import {useEffect, useRef, useState} from 'react';
 import {GameCard} from '@models/constants/card';
 import {difficultyCards} from '@utils/constants/difficulties';
 import {getMatrix} from '@utils/helpers/matrixBuilders';
-
-import {FlippedState, UsePlayScreenType} from './types';
+import {FlippedState, UsePlayScreenType} from '@models/screens/playScreenTypes';
 
 export const usePlayScreen: UsePlayScreenType = ({difficulty}) => {
   const [matrix, setMatrix] = useState<GameCard[][]>([]);

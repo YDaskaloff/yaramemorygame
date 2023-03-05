@@ -7,8 +7,8 @@ import ResetButton from '@components/ResetButton/ResetButton';
 import {GameCard} from '@models/constants/card';
 import Card from '@components/Card/Card';
 import VictoryMessage from '@components/VictoryMessage/VictoryMessage';
+import {PlayScreenType} from '@models/screens/playScreenTypes';
 
-import {PlayScreenType} from './types';
 import styles from './styles';
 import {usePlayScreen} from './usePlayScreen';
 

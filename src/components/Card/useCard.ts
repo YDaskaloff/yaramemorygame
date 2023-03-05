@@ -5,13 +5,14 @@ export const useCard: UseCardType = ({
   flippedState,
   flipPair,
   card,
+  canFlip,
 }) => {
   const isFlipped =
     flippedState[card.position] ||
     flipPair.some(curCard => curCard.position === card.position);
 
   const flipHandler = () => {
-    onFlip(card);
+    canFlip && onFlip(card);
   };
 
   return {isFlipped, flipHandler};
