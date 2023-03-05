@@ -1,24 +1,55 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 import commonStyles from '@styles/commonStyles';
 import GameInfo from '@components/GameInfo/GameInfo';
 import ResetButton from '@components/ResetButton/ResetButton';
-import {Difficulties} from '@utils/constants/difficulties';
+import {GameCard} from '@models/constants/card';
+import Card from '@components/Card/Card';
+import VictoryMessage from '@components/VictoryMessage/VictoryMessage';
 
 import {PlayScreenType} from './types';
 import styles from './styles';
+import {usePlayScreen} from './usePlayScreen';
 
 const PlayScreen: PlayScreenType = ({resetGame, difficulty}) => {
+  const {isVictory, score, matrix, canFlip, onFlip, flipPair, flippedState} =
+    usePlayScreen({difficulty});
+
   return (
     <View style={commonStyles.screenContent}>
-      <View style={styles.gameInfoContainer}>
-        {/* PlayScreen cannot be accessed of Difficulty is null */}
-        <GameInfo value={difficulty as Difficulties} title="Difficulty" />
-        <ResetButton onPress={resetGame} />
-        <GameInfo value="20" title="Score" />
-      </View>
-      <Text>PLAY</Text>
+      {isVictory ? (
+        <VictoryMessage score={score} resetGame={resetGame} />
+      ) : (
+        <>
+          <View style={styles.gameInfoContainer}>
+            <GameInfo value={difficulty} title="Difficulty" />
+            <ResetButton onPress={resetGame} />
+            <GameInfo value={score.toString()} title="Score" />
+          </View>
+          <View style={styles.row}>
+            {matrix.map(column => {
+              return (
+                <View>
+                  {(column as GameCard[]).map(card => {
+                    return (
+                      <Card
+                        key={card.position}
+                        card={card}
+                        difficulty={difficulty}
+                        onFlip={onFlip}
+                        flippedState={flippedState}
+                        flipPair={flipPair}
+                        canFlip={canFlip}
+                      />
+                    );
+                  })}
+                </View>
+              );
+            })}
+          </View>
+        </>
+      )}
     </View>
   );
 };

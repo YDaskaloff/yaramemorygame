@@ -1,5 +1,9 @@
 import {Dimensions} from 'react-native';
+
 import {RelativeUnitsReturnType} from '@models/utils/styleUtilsTypes';
+
+export const windowWidth = Dimensions.get('window').width;
+export const windowHeight = Dimensions.get('window').height;
 
 export const getRelativeUnits = (
   baseSize: number = 360,
